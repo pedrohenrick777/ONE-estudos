@@ -1,0 +1,24 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    const tela = document.querySelector('canvas');
+    const pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(125, 0, 350, 300);
+
+    pincel.fillStyle = 'black';
+    const olhos_cordenadas = [[175, 50], [335, 50]];
+
+    for (const cord of olhos_cordenadas) {
+        pincel.fillRect(cord[0], cord[1], 90, 90);
+    };
+
+    pincel.fillRect(265, 140, 70, 100);
+
+    const boca_cordenadas = [[225, 190], [335, 190]];
+
+    for (const cord of boca_cordenadas) {
+        pincel.fillRect(cord[0], cord[1], 40, 110);
+    };
+</script>

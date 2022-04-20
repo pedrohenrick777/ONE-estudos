@@ -1,0 +1,57 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    let tela = document.querySelector('canvas');
+    let pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    let x = 300;
+    let y = 200;
+
+    let esquerda = 37;
+    let cima = 38;
+    let direita = 39;
+    let baixo = 40;
+
+    let taxa = 10;
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(x, y, 10);
+    }
+
+    setInterval(atualizaTela, 20);
+
+    document.onkeydown = (e) => {
+        if (e.keyCode == cima
+            && y > 0) {
+            y -= taxa;
+        } else if (e.keyCode == baixo
+            && y < 400) {
+            y += taxa;
+        } else if (e.keyCode == esquerda
+            && x > 0) {
+            x -= taxa;
+        } else if (e.keyCode == direita
+            && x < 600) {
+            x += taxa;
+        }
+    }
+
+</script>
