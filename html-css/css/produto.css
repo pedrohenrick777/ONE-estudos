@@ -25,11 +25,11 @@
 }
 
 .produtos li:hover h2 {
-    font-size: 34px;
+    font-size: 30px;
 }
 
 .produtos h2 {
-    font-size: 30px;
+    font-size: 29px;
     font-weight: bold;
 }
 
@@ -41,4 +41,16 @@
     font-size: 22px;
     font-weight: bold;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 950px) {
+    .produtos {
+        width: auto;
+    }
+
+    .produtos li {
+        display: block;
+        width: 99%;
+        margin: 10px auto;
+    }
 }
